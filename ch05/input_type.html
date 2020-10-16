@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch05/input_type.html</title>
+</head>
+<body>
+    <form action="input_type.jsp" method="POST">
+        <h3>input radio 태그 사용</h3>
+        <h4>당신의 성별은 무엇입니까?</h4>
+        
+        <input type="radio" name ="sex" value="male" checked> 남자
+        <input type="radio" name ="sex" value="female"> 여자
+        <p></p>
+        <h4>당신은 몇 학년입니까?</h4>
+        <input type="radio" name="year" value="1" checked>1학년
+        <input type="radio" name="year" value="2">2학년
+        <input type="radio" name="year" value="3">3학년
+        <input type="radio" name="year" value="4">4학년
+        <p></p>
+        <h3>input checkbox 태그 사용</h3>
+        <h4>현재 관심을 가지고 있는 학습 주제는 무엇입니까?</h4>
+        
+        <input type="checkbox" name="subject" value="HTML5" checked>HTML5 <br>
+        <input type="checkbox" name="subject" value="CSS3">CSS3 <br>
+        <input type="checkbox" name="subject" value="Javascript">Javascript <br>
+        <input type="checkbox" name="subject" value="Jquery">Jquery <br>
+        <p></p>
+        
+        
+        <h3>Button 태그 사용</h3>
+        <button type="button" onclick="alter('클릭-1 사용')">
+            클릭-1
+        </button>
+        <h3>input 태그 사용</h3>
+        <input type="button" onclick="alter('클릭-2 사용')" value="클릭-2">
+        <h3>image 버튼 사용</h3>
+        <button type="button" onclick="alter('클릭-3 사용')">
+            <img src="../images/button.jpg">
+            클릭-3
+        </button>
+
+        <h3>Select-option 태그 사용</h3>
+        <h4>관심 있는 학습 주제 한 가지를 선택하세요.</h4>
+        <select name="" id="">
+            <option value="1" selected>HTML5</option>
+            <option value="2">CSS3</option>
+            <option value="3">Javascript</option>
+            <option value="4">Jquery</option>
+        </select>
+        <p></p>
+
+        <h3>Select-multiple 태그 사용</h3>
+        <h4>관심 있는 학습 주제를 모두 선택하세요</h4>
+        <select name="subjects" size="4" multiple>
+            <option value="1" selected>HTML5</option>
+            <option value="2">CSS3</option>
+            <option value="3">Javascript</option>
+            <option value="4" selected>Jquery</option>
+        </select>
+        <p></p>
+        <h3>select-optgroup태그 사용</h3>
+        <h4>그룹별 선택 항목을 제공합니다.</h4>
+        <label>전공분야를 선택하세요.
+            <select name="major">
+                <optgroup label="computer">
+                    <option>Software</option>
+                    <option>Robot</option>
+                    <option>System</option>
+                </optgroup>
+                <optgroup label="language">
+                    <option selected>Korea</option>
+                    <option>English</option>
+                    <option>China</option>
+                    <option>Germany</option>
+                </optgroup>
+                <optgroup label="business">
+                    <option>Service</option>
+                    <option>Education</option>
+                    <option>Communication</option>
+                    <option>Marketing</option>
+                </optgroup>
+            </select>
+        </label>
+        <p></p>
+        <h3>input-option</h3>
+        <h4>선택사항을 직업 입력하세요</h4>
+        <input type="text" list="majorlist" name="major">
+        <datalist id="majorlist">
+            <option value="Software">소프트웨어</option>
+            <option value="Robot">로봇</option>
+            <option value="System">시스템</option>
+            <option value="Service">서비스</option>
+            <option value="Education">교육</option>
+        </datalist>
+        <p></p>
+        <h3>오늘 날짜 입력</h3>
+        Today : <input type="date" name="today">
+        <h3>프로젝트 수행기간</h3>
+        From : <input type="date" name="from" min="2016-03-01" max="2016-12-31">
+        To : <input type="date" name="to" min="2018-03-01" max="2018-06-30">
+        <p></p>
+
+        <h3>생일(년/월) 입력</h3>
+        생일 : <input type="month" name="birth">
+        <h3>주간 계획(년/주) 입력</h3>
+        주간 계획 : <input type="week" name="weekeend">
+        <p></p>
+        <h3>현재 시간 입력</h3>
+        Time : <input type="time" name="Now">
+        <h3>생일(년도,월,일,시간) 입력</h3>
+        Birthday : <input type="datetime-local" name="bdaytime">
+        <p></p>
+        <h3>원하는 색상을 선택하세요.</h3>
+        <input type="color" name="color_value" value="#0000ff">
+        <p></p>
+        <h3>숫자입력</h3>
+        <h4>나이를 입력하세요</h4>
+        <input type="number" name="count" min="1" max="130">
+        <p></p>
+        <h3>0~100 범위에서 원하는 지점을 선택하세요</h3>
+        <input type="range" name="point" min="0" max="100">
+        <p></p>
+        <h3>이메일을 정확하게 입력하세요.</h3>
+        이메일 : <input type="email" name="myemail">
+        <p></p>
+        <h3>홈페이지 주소를 입력하세요.</h3>
+        홈페이지 : <input type="url" name="myhome">
+        <h3>검색어를 입력하세요</h3>
+        구글검색 : <input type="search" name="googlesearch">
+        <p></p>
+
+        
+        <input type="submit" value="제출">
+        <input type="reset" value="다시작성">
+    </form>
+</body>
+</html>
