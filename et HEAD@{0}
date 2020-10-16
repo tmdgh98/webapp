@@ -1,0 +1,23 @@
+[33md874a5b[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m HEAD@{0}: commit: 학원
+[33m424104d[m HEAD@{1}: reset: moving to HEAD^
+[33md575e2f[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{2}: reset: moving to HEAD^
+[33m30abe6a[m HEAD@{3}: reset: moving to HEAD^
+[33m14f27d4[m HEAD@{4}: reset: moving to HEAD^
+[33mb73a5b8[m HEAD@{5}: reset: moving to HEAD^
+[33m70a40cb[m HEAD@{6}: reset: moving to HEAD^
+[33m0018642[m HEAD@{7}: reset: moving to HEAD^
+[33m68f0009[m HEAD@{8}: reset: moving to HEAD^
+[33m5bb8c85[m HEAD@{9}: commit: 학원
+[33m68f0009[m HEAD@{10}: commit: 학원2
+[33m0018642[m HEAD@{11}: commit: 학원
+[33m70a40cb[m HEAD@{12}: commit: 학원
+[33mb73a5b8[m HEAD@{13}: commit: 학원
+[33m14f27d4[m HEAD@{14}: commit: 학원
+[33m30abe6a[m HEAD@{15}: commit: 학원
+[33md575e2f[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{16}: commit: 학원
+[33m424104d[m HEAD@{17}: commit: 학원
+[33mc2cab47[m HEAD@{18}: pull --tags origin main: Fast-forward
+[33mcddde1e[m HEAD@{19}: commit: 추가수정됨.
+[33m3606a06[m HEAD@{20}: Branch: renamed refs/heads/master to refs/heads/main
+[33m3606a06[m HEAD@{22}: commit: ignore add
+[33mfff0f82[m HEAD@{23}: commit (initial): first commit
