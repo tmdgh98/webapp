@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form.html</title>
+    <style>
+        div{
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding:  20px;
+        }
+        input[type=submit]{
+            background-color: #4caf50;
+            color:  white;
+            padding: 14px 20px 14px 20px;
+            padding: 10px 15px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-right: 35%;
+            margin-left: 35%;
+            border-radius: 5px;
+            width: 30%;
+            
+        }
+        input[type=submit]:hover{
+            background-color: aqua;
+        }
+        input[type=text],select{
+            
+            width: 65%;
+            display:inline-block;
+            padding: 10px 15px;
+            margin: 10px 0;
+            border: 1px solid white;
+            border-radius: 3px;
+        }
+        #fname{
+            position: relative;
+            left: 5.1%;
+        }
+        #lname{
+            position: relative;
+            left: 5.3%;
+        }
+        #country{
+            position: relative;
+            left: 8.5%;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Form Tag</h3>
+    <div>
+        <form action="">
+            <label for="fname">FirstName</label>
+            <input type="text" id="fname" name="firstName" placeholder="Your name...">
+            <label for="lname">LastName</label>
+            <input type="text" id="lname" name="lastName" placeholder="Your last name...">
+            <label for="country">Country</label>
+            <select id="country" name="country">
+                <option value="">Korea</option>
+                <option value="">China</option>
+                <option value="">Japan</option>
+            </select>
+            <input type="submit" value="OK">
+        </form>
+    </div>
+</body>
+
+</html>

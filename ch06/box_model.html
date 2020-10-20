@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box_model.html</title>
+    <style>
+        div{
+            background-color: antiquewhite;
+            border: 3px solid red;
+            padding: 10px;
+            margin: 10px;
+        }
+        div#absolute{
+            position:absolute;
+            left: 100px;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+        div#fixed{
+            position:fixed;
+            left: 200px;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }div#ticky{
+            position:sticky;
+            left: 50px;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+        div#static{
+            position:static;
+            left: 50px;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Content
+        <div>item1</div>
+        <div>item2</div>
+        <div id="absolute">item3 fixed</div>
+        <div>item4</div>
+        <div id="fixed">item5 absolute</div>
+        <div>item6</div>
+        <div id="ticky">item7 sticky</div>
+        <div>item8</div>
+        <div id="static">item9 static</div>
+        <div >item10</div>
+        <div>item6</div>
+        <div>item7</div>
+        <div>item8</div>
+        <div>item9</div>
+        <div >item10</div>
+        <div>item6</div>
+        <div>item7</div>
+        <div>item8</div>
+        <div>item9</div>
+        <div >item10</div>
+        <div>item6</div>
+        <div>item7</div>
+        <div>item8</div>
+        <div>item9</div>
+        <div >item10</div>
+        <div>item6</div>
+        <div>item7</div>
+        <div>item8</div>
+        <div>item9</div>
+        <div >item10</div>
+    </div>    
+</body>
+</html>

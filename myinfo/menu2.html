@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu.html</title>
+    <style>
+        *{
+            width: 500px;
+        }
+        header{
+            border: 1px solid;
+            height: 50px;
+            background-color: black;
+            color: white;
+        }
+        a:link{
+            color: white;
+        }
+        a:visited{
+            color: white;
+        }
+        header li{
+            display: inline;
+        }
+        nav{
+            border: 1px solid;
+            position: sticky;
+            height: 800px;
+            width: 100px;
+        }
+        section{
+            border: 1px solid;
+            position: absolute;
+            
+            top: 60px;
+            left: 110px;
+            width: 398px;
+            height: 800px;
+        }
+        footer{
+            border: 1px solid;
+            height: 50px;
+            background-color:black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <header>
+            <ol>
+                <li><a href="menu1.html">1.menu</a></li>
+                <li><a href="menu2.html">2.menu</a></li>
+                <li><a href="menu3.html">3.menu</a></li>
+            </ol>
+        </header>
+        <nav><ol>
+            <li>여기엔</li>
+            <li>뭘</li>
+            <li>적어야</li>
+            <li>되지?</li>
+        </ol></nav>
+        <section>public String(byte[] bytes,
+            int offset,
+            int length,
+            Charset charset)
+Constructs a new String by decoding the specified subarray of bytes using the specified charset. The length of the new String is a function of the charset, and hence may not be equal to the length of the subarray.
+This method always replaces malformed-input and unmappable-character sequences with this charset's default replacement string. The CharsetDecoder class should be used when more control over the decoding process is required.
+
+Parameters:
+bytes - The bytes to be decoded into characters
+offset - The index of the first byte to decode
+length - The number of bytes to decode
+charset - The charset to be used to decode the bytes
+Throws:
+IndexOutOfBoundsException - If the offset and length arguments index characters outside the bounds of the bytes array
+Since:
+1.6</section>
+        <footer>끝</footer>
+    </div>
+</body>
+</html>
