@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 220px 500px 50px 300px;
+            grid-template-rows: 20px 90px 50px 150px auto 100px;
+            grid-template-areas:
+                'start start start start '
+                'naver search search img'
+                'menu menu menu menu'
+                'ad ad login login'
+                'main1 main1 main2 main2'
+                'foot foot foot foot';
+            grid-gap: 1px;
+            /* background-color: blue; */
+            padding: 10px;
+        }
+
+        .container>div {
+            /* background-color: antiquewhite; */
+            text-align: center;
+            font-size: 30px;
+        }
+
+        div.item1 {
+            grid-area: start;
+            padding: 0px;
+            text-align: right;
+            font-size: 13px;
+        }
+
+        div.item2 {
+            grid-area: naver;
+            background-size: cover;
+            padding: 10px;
+        }
+
+        div.item3 {
+            grid-area: search;
+        }
+
+        div.item4 {
+            grid-area: img;
+        }
+
+        div.item5 {
+            grid-area: menu;
+            text-align: left;
+        }
+
+        div.item6 {
+            grid-area: ad;
+        }
+
+        div.item7 {
+            grid-area: login;
+            text-align: right;
+        }
+
+        div.item8 {
+            grid-area: main1;
+        }
+
+        div.item9 {
+            grid-area: main2;
+            
+        }
+
+        div.item10 {
+            grid-area: foot;
+            text-align: right;
+        }
+        div#a{
+            position:sticky;
+            left: 10px;
+            top: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item1">naver is start page</div>
+        <div class="item2"><img src="../images/naver.png" width="200px" height="60px" alt=""></div>
+        <div class="item3">
+            <input type="search" id="site-search" size="50px" name="q" aria-label="naver.com">
+            <button>Search</button>
+        </div>
+        <div class="item4"><a href="https://search.naver.com/search.naver?sm=top_ros&fbm=0&ie=utf8&query=%EA%B2%BD%EC%B0%B0%EC%9D%98+%EB%82%A0" target="_blank"><img src="../images/naver2.png" width="250px" height="60px" alt=""></a></div>
+        <div class="item5">mail cafe blog jisicIn shoping Pay TV dictionary news menu menu menu </div>
+        <div class="item6"> <a href="https://www.osongbeautyexpo.kr/" target="_blank"> <img src="../images/naver3.jpg" width="720px" height="150px" alt=""></a></div>
+        <div class="item7">
+            id : 
+            <input type="text">
+            <br>
+            password : 
+            <input type="password">
+        </div>
+        <div class="item8">main1a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br></div>
+        
+        <div class="item9"><div id="a">moveMain<br>moveMain<br>moveMain<br>moveMain<br>moveMain<br>moveMain<br>moveMain<br></div></div>
+        <div class="item10">Copyright ⓒ 2016, Naver Co.,Ltd</div>
+    </div>
+</body>
+
+</html>
