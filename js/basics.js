@@ -49,14 +49,34 @@ for(str of strarr){
     console.log(str);
 }
 
+console.clear();
+
+//방법1
 let days = ['일요일', '월요일','화요일', '수요일', '목요일', '금요일', '토요일'];
 let li
 let ul = document.createElement('ul');
-for(let i = 0 ; i<7; i++){
+for(day of days){
     li = document.createElement('li');
-    li.innerHTML = days[i];
+    li.innerHTML = day;
     ul.append(li);
 }
+
+// li.innerHTML="가나다라마바사";
 let div = document.getElementById('show');
 console.log(div);
 div.append(ul);
+
+//방법2
+let ulTags = '<ul>';
+for(let i = 0; i<7; i++){
+    ulTags += '<li>' + days[i] + '</li>';
+}
+ulTags += '</ul>';
+document.write(ulTags);
+
+let arr1 = [];
+for(let i =0; i<6; i++){
+    arr1[i] = i;
+}
+console.log(arr1);
+
