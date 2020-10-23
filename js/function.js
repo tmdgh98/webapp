@@ -61,6 +61,8 @@ function myFunc(v1, v2) {
     return sum;
 }
 
+
+
 console.log(myFunc(10,1));
 console.log(myFunc(1,10));
 console.log(myFunc(10,2));
