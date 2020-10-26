@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="show"></div>
+    
+    <script>
+        console.log('first');
+        let xhtp = new XMLHttpRequest();
+        xhtp.onreadystatechange = function(){
+            // console.log(xhtp.readyState, xhtp.status, xhtp.responseText);
+            let table, tr, th, td, text;
+            if(xhtp.readyState == 4&& xhtp.status == 200){
+                let data = JSON.parse(xhtp.responseText);
+                console.log('mid');
+                console.log(data);
+                table = document.createElement('table');
+                table.border = '1';
+                let frist = true;
+                for (person of data) {
+                    // console.log(data[i]['id'], data[i]['first_name']);
+                    if(frist){
+                        tr = document.createElement('tr');
+                        for(p in person){
+                            td = document.createElement('th');
+                            text = document.createTextNode(p);
+                            
+                            td.append(text)
+                            tr.append(td);
+                        }
+                        frist = false;
+                        table.append(tr);
+                    }
+                    tr = document.createElement('tr');
+                    for(p in person){
+                        // console.log(p);
+                        
+                        if(p=='id'){
+                            td = document.createElement('td');
+                            tr.id = person[p];
+                            text = document.createTextNode(person[p]);
+                            
+                            td.append(text)
+                            tr.append(td);
+                        }else{
+                            td = document.createElement('td');
+                            text = document.createTextNode(person[p]);
+                            
+                            td.append(text)
+                            tr.append(td);
+                            // console.log(person[p]);
+                        }
+                        
+                    }
+                    // console.log(data[i]['last_name']);
+                    table.append(tr);
+                }
+            }
+            document.querySelector('#show').append(table);
+        }
+        xhtp.open('get','MOCK_DATA.json');
+        xhtp.send();
+
+        console.log('last');
+        //id, first_name, last_name, gender, email
+        //tr id = id값
+    </script>
+</body>
+</html>

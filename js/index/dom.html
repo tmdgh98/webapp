@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM Tutorial</title>
+  </head>
+
+  <body>
+    <h1>DOM Lesson one</h1>
+    <p>Hello world!</p>
+    <div>
+        <p>이름 : <input type="text" value="곽승호"></p>
+        <p>나이 : <input type="text" value="31"></p>
+        <p>직업 : <input type="text" value="백수"></p>
+        <button>추가</button>
+    </div>
+    <script>
+        console.log(document.body);
+        console.log(document.body.childNodes[1].childNodes[0].nodeValue = 'hihi');
+        console.log(document.body.childNodes[3].childNodes[0].nodeValue = 'byebye');
+        let div = document.createElement('div');
+        div.className = 'row';
+        div.setAttribute('id','row');
+        let text = document.createTextNode('Hello, World');
+        div.append(text);
+        // document.querySelector('body').append(div);
+        let $let = document.getElementsByTagName('p');
+        $let[0].before(div);
+        console.log(div);
+        
+        let table2 = document.createElement('table');
+        table2.border = '1';
+        let tr = document.createElement('tr');
+        let td = document.createElement('td');
+        text = document.createTextNode('이름');
+        td.append(text);
+        tr.append(td);
+        td = document.createElement('td');
+        text = document.createTextNode('나이');
+        td.append(text);
+        tr.append(td);
+        td = document.createElement('td');
+        text = document.createTextNode('직업');
+        td.append(text);
+        tr.append(td);
+        table2.append(tr);
+        tr = document.createElement('tr');
+        td = document.createElement('td');
+        text = document.createTextNode('홍길동');
+        td.append(text);
+        tr.append(td);
+        td = document.createElement('td');
+        text = document.createTextNode('16');
+        td.append(text);
+        tr.append(td);
+        td = document.createElement('td');
+        text = document.createTextNode('학생');
+        td.append(text);
+        tr.append(td);
+        table2.append(tr);
+        document.querySelector('body').append(table2);
+
+        let tableData = [['이름','나이','직업'],['곽승호','31','백수']]
+        let table = document.createElement('table');
+        // table.border = '1';
+        table.setAttribute('border','1');
+        for(let i=0; i < tableData.length; i++){
+            let tr = document.createElement('tr');
+            for(let j=0; j<tableData[i].length; j++){
+                let td = document.createElement('td');
+                text = document.createTextNode(tableData[i][j]);        
+                td.append(text);
+                tr.append(td);
+            }    
+            table.append(tr);
+        }
+        document.querySelector('body').append(table);
+        
+        let person = {
+            이름 : '곽승민',
+            나이 : "19",
+            직업 : "고3"
+        }
+        // console.log(person.length);
+        // for(a in person){
+        //     console.log(a);
+        //     console.log(person[a]);
+        // }
+        let table3 = document.createElement('table');
+        table3.border = '1';
+        let tr3 = document.createElement('tr');
+        for(p in person){
+            let td = document.createElement('td');
+            text = document.createTextNode(p);        
+            td.append(text);
+            tr3.append(td);
+        }    
+        table3.append(tr3);
+        tr3 = document.createElement('tr');
+        for(p in person){
+            let td = document.createElement('td');
+            text = document.createTextNode(person[p]);        
+            td.append(text);
+            tr3.append(td);
+        }    
+        table3.append(tr3);
+        document.querySelector('body').append(table3);
+
+        let btn = document.querySelector('button');
+        let inputData = document.querySelectorAll('input');
+        console.log(inputData[0]);
+        btn.onclick = function(){
+            let inputData = document.querySelectorAll('input');
+            let table = document.querySelector('table');
+            let tr = document.createElement('tr');
+            for(let j=0; j<inputData.length; j++){
+                let td = document.createElement('td');
+                text = document.createTextNode(inputData[j].value);        
+                td.append(text);
+                tr.append(td);
+            }    
+            table.append(tr);
+        }
+    </script>
+  </body>
+
+</html>

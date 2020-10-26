@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="name" value="곽승호"><br>
+    <input type="text" name="age" value="31"><br>
+    <input type="text" name="job" value="백수"><br>
+    <button id="btn">입력</button><br>
+    <div style="height:10px"></div>
+
+    <table id="tb1" border="1">
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+            <th>직업</th>
+            <th>기능</th>
+        </tr>
+    </table>
+    <script>
+        // let btn = document.querySelector('#btn');
+        // let btn = document.getElementById('btn');
+        // btn.onclick = function(){}
+        // btn.addEventListener('click', function(){
+        //     let inputData = document.querySelectorAll('input');
+        //     let name = inputData[0].value;
+        //     let age = inputData[1].value;
+        //     let job = inputData[2].value;
+        //     let tr = document.createElement('tr');
+        //     let td = document.createElement('td');
+        //     let text = document.createTextNode(name);
+        //     td.append(text);
+        //     tr.append(td);
+        //     td = document.createElement('td');
+        //     text = document.createTextNode(age);
+        //     td.append(text);
+        //     tr.append(td);
+        //     td = document.createElement('td');
+        //     text = document.createTextNode(job);
+        //     td.append(text);
+        //     tr.append(td);
+        //     //버튼 생성.
+        //     let btn = document.createElement('button');
+        //     text = document.createTextNode('Del');
+        //     btn.append(text);
+        //     td = document.createElement('td');
+        //     td.append(btn);
+        //     tr.append(td);
+
+        //     document.querySelector('#tb1').append(tr);
+        // })
+        btn.addEventListener('click', myCallBackFunc);
+        btn.addEventListener('mouseover',myMouseOverFunc);
+        btn.addEventListener('mouseout',myMouseOutFunc);
+
+        function myCallBackFunc(){
+            let inputData = document.querySelectorAll('input');
+            let tr = document.createElement('tr');
+            let name = inputData[0].value;
+            let age = inputData[1].value;
+            let job = inputData[2].value;
+            if(name == null|| name ==''){
+                window.alert('이름을 입력하세요.');
+                return;
+            }
+            if(!age){
+                window.alert('나이를 입력하세요.');
+                return;
+            }
+            if(!job){
+                window.alert('직업을 입력하세요.');
+                return;
+            }
+            for (let i = 0; i < inputData.length; i++) {
+                let td = document.createElement('td');
+                let text = document.createTextNode(inputData[i].value);
+                td.append(text);
+                tr.append(td);
+                inputData[i].value = "";
+            }
+            let btn = document.createElement('button');
+            text = document.createTextNode('Del');
+            btn.onclick = function(){
+                //나이가져오기
+                console.log(this.parentNode.previousSibling.previousSibling.childNodes[0].nodeValue);
+                this.parentNode.parentNode.remove();
+            }
+            btn.append(text);
+            td = document.createElement('td');
+            td.append(btn);
+            tr.append(td);
+            document.querySelector('#tb1').append(tr);
+        }
+
+        function myMouseOverFunc(){
+            
+        }
+        function myMouseOutFunc(){
+
+        }
+
+        let a = 10;
+        
+        console.log(sum());
+        function sum(){
+            let b =20;
+            sum = b + a;
+            return sum;
+        }
+        let b = 0;
+        for(let i=0 ; i < 10; i++){
+            let a = 1;
+            b += a;
+        }
+        console.log(b);
+    </script>
+</body>
+</html>

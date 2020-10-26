@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=id, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="show"></div>
+    <script>
+        let person1 ={
+            name : 'Hong',
+            age : 20,
+            id: 'user2',
+            url: 'https://www.google.com'
+        }
+        let person2 ={
+            name : 'Kwak',
+            age : 31,
+            id: 'user3',
+            url: 'https://www.daum.net'
+        }
+        let person3 ={
+            name : 'Chan',
+            age : 30,
+            id: 'user1',
+            url: 'https://www.naver.com'
+        }
+        let members = [person1, person2, person3];
+
+        let table, tr, td, text, url;
+        table = document.createElement('table');
+        table.border = '1';
+        let boo = true;
+        for(member of members){
+            tr = document.createElement('tr');
+            url = member.url;
+            if(boo){
+                for(p in member){
+                    td = document.createElement('th');
+                    text = document.createTextNode(p);
+                    td.append(text);
+                    tr.append(td);
+                    boo = false;
+                }
+                td = document.createElement('th');
+                    text = document.createTextNode("버튼");
+                    td.append(text);
+                    tr.append(td);
+            }
+            table.append(tr);
+            tr = document.createElement('tr');
+            for(p in member){
+                if(p=='url'){
+                    td = document.createElement('td');
+                    let tagA = document.createElement('a');
+                    tagA.target = '_blink';
+                    tagA.href = member[p];
+                    text = document.createTextNode(member[p]);
+                    tagA.append(text);
+                    td.append(tagA);
+                    tr.append(td);
+                }else{
+                    td = document.createElement('td');
+                    text = document.createTextNode(member[p]);
+                    td.append(text);
+                    tr.append(td);
+                }
+            }
+            
+            let btn = document.createElement('button');
+            td = document.createElement('td');
+            text = document.createTextNode("링크");
+            btn.append(text);
+            btn.onclick = function(){
+                location.href = url;
+            }
+            td.append(btn);
+            tr.append(td);
+            table.append(tr);
+        }
+        document.querySelector('body').append(table);
+
+    </script>
+</body>
+</html>
