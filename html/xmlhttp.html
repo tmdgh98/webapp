@@ -18,20 +18,28 @@
 
             if (xhtp.readyState == 4 && xhtp.status == 200) {
                 console.log('mid');
+                let dd = xhtp.responseText;
+                console.log(dd);
                 let data = JSON.parse(xhtp.responseText);
                 console.log(data);
                 loadJson(data);
                 loadJson2(data);
-                // console.log(show.childNodes);
+                console.log(show.childNodes);
             }
+            // if (xhtp.readyState == 4 && xhtp.status == 200) {
+            //     let data = xhtp.responseXML;
+            //     data = data.getElementsByTagName('record');
+            //     console.log(data[1].children[1].firstChild.nodeValue);
+            // }
 
         }
         xhtp.open('get', 'MOCK_DATA.json');
+        // xhtp.open('get','dataset.xml');
         xhtp.send();
 
         function loadJson2(data) {
             let table, tr, th, td, text;
-            let field = ['id', 'first_name', 'last_name', 'email', 'gender'];
+            let field = ['id', 'first_name', 'email', 'last_name', 'gender'];
             table = document.createElement('table');
             table.border = '1';
             tr = document.createElement('tr');
@@ -114,6 +122,8 @@
             show.append(table);
         }
         console.log('last');
+        let a = 5;
+        let b = "a href ="
         //id, first_name, last_name, gender, email
         //tr id = id값
     </script>

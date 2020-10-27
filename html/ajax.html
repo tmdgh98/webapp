@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+
+        let data, length;
+        let xhtp = new XMLHttpRequest();
+        xhtp.onreadystatechange = function(){
+            if(this.readyState == 4 && xhtp.status == 200){
+                data = this.responseXML;
+                console.log(data);
+                data = data.getElementsByTagName('record');
+                length = data.length;
+                showRecord(1);
+            }
+        }
+        xhtp.open('get','dataset.xml');
+        xhtp.send();
+
+
+        function showRecord(order){
+            data[order]
+            let tag = document.createElement('ul');
+            for(let i =0; i<data[order].children.length; i++){
+                console.log(data[order].children[i]);
+                let li = document.createElement('li');
+                let text = document.createTextNode(data[order].children[i].innerHTML)
+                li.append(text);
+                tag.append(li);
+            }
+            document.getElementById('show');
+            show.children[0].remove();
+            show.append(tag);
+        }
+    </script>
+</head>
+<body>
+    <button id="prev"><<</button>
+    <!-- <input type="text" value="2"> -->
+    <button id="next">>></button>
+    <div id="show"><a></a></div>
+    <script>
+        let prev = document.getElementById('prev');
+        let next = document.getElementById('next');
+        let input = document.querySelector('input');
+        // let i=input.value-1;
+        let i = 1;
+         
+        prev.onclick = function(){
+            if(i>0)
+            i--;
+            // input.value = i+1;
+            showRecord(i);  
+        }
+        next.addEventListener('click',function(){
+            
+            if(i< length-1)
+                i++;
+            // input.value = i+1;
+            showRecord(i);
+        })
+    </script>
+</body>
+</html>

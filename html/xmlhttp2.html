@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="show"></div>
+    <script>
+        let xhtp = new XMLHttpRequest();
+        xhtp.onreadystatechange = function () {
+            if (xhtp.readyState == 4 && xhtp.status == 200) {
+                let data = xhtp.responseXML;
+                console.log(data);
+                data = data.getElementsByTagName('record');
+                console.log(data);
+                console.log(data[1]);
+                console.log(data[1].children[1].firstChild.nodeValue);
+                console.log(data[1].children);
+                // for(a in data[1]){
+                //     console.log(a);
+                // }
+                // console.log(data[1].children[2].innerHTML);
+                // for (let i = 0; i < data.length; i++) {
+                //     for (let j = 0; j < data[i].children.length; j++) {
+                //         console.log(data[i].children[j].innerHTML);
+                //     }
+                // }
+                // let a = [];
+                // for (let i = 0; i < data[1].children.length; i++) {
+                //     console.log(data[1].children[i]);
+                //     // console.log(a[i])
+                // }
+                // console.log(a)
+
+                loadXml(data);
+            }
+        }
+        xhtp.open('get', 'dataset.xml');
+        xhtp.send();
+
+        function loadXml(data) {
+            let table, tr, td, text;
+            table = document.createElement('table');
+            table.border = '1';
+            tr = document.createElement('tr');
+            let title = ['id','first_name','last_name','email','gender','ip_address']
+            for (let i = 0; i < title.length; i++) {
+                td = document.createElement('th');
+                // console.log(data[0].children[i]);
+                text = document.createTextNode(title[i]);
+                // text = document.createTextNode();
+                td.append(text);
+                tr.append(td);
+            }
+            table.append(tr);
+            for (let i = 0; i < data.length; i++) {
+                tr = document.createElement('tr');
+                for (let j = 0; j < data[i].children.length; j++) {
+                    td = document.createElement('td');
+                    text = document.createTextNode(data[i].children[j].innerHTML);
+                    td.append(text);
+                    tr.append(td);
+                }
+                table.append(tr);
+            }
+            document.querySelector('#show').append(table);
+        }
+    </script>
+</body>
+
+</html>
