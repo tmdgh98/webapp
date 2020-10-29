@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exam01.html</title>
+    <style>
+        input{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="show">
+        <label for="x">숫자x</label>
+        <input type="number" name="x">
+        <label for="y">숫자y</label>
+        <input type="number" name="y">
+        <button id="sum">합계</button>
+        <input type="number" id="putsum">
+    </div>
+    <script>
+        let btn = document.getElementById("sum");
+        btn.addEventListener('click', function(){
+            let num = document.querySelectorAll("input");
+            // console.log(num);
+            let x = num[0].value;
+            x = Number(x);
+            let y = num[1].value;
+            y = Number(y);
+            console.log(x+" "+y);
+
+            if(x>y){
+                let temp = x;
+                x = y;
+                y = temp;
+            }
+            let sum = 0;
+            for(let i = x; i<=y; i++){
+                sum += i;
+                console.log(i + " "+ sum);
+            }
+            console.log(sum);
+            num[2].value = sum;
+
+        })
+
+       
+    </script>
+</body>
+</html>

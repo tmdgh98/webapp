@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exam04.html</title>
+</head>
+<body>
+
+    <script>
+        let students = [];
+        let div = document.createElement('div');
+        div.id = 'show';
+        let title = ['studentNo','name','grade','major']
+        for(a of title){
+            div.innerHTML += a + " : ";
+            let input = document.createElement('input');
+            input.name = a;
+            div.append(input);
+            div.innerHTML += '<br>';
+        }
+        let btn = document.createElement('button')
+        btn.innerHTML = "입력";
+
+        div.append(btn);
+        document.querySelector('body').append(div);
+        
+        btn.addEventListener('click', function(){
+            inputs = document.querySelectorAll('input');
+
+            let student = {};
+            for(let i=0; i<title.length; i++){
+                student[title[i]] = inputs[i].value;
+            }
+
+            students.push(student);
+
+            console.log(students);
+        });
+        
+    </script>
+</body>
+</html>

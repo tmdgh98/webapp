@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exam05.html</title>
+    <link rel="stylesheet" href="table.css" />
+</head>
+<body>
+    
+    <script>
+        let xhtp = new XMLHttpRequest();
+        xhtp.onreadystatechange = function(){
+            if(xhtp.readyState==4&&xhtp.status==200){
+                let data = xhtp.response;
+                console.log(data);
+                let div,table,tr,td,text;
+                div = document.createElement('div');
+                table = document.createElement('table');
+                table.border = 1;
+                let first = true;
+                for(let i = 0; i<data.length; i++){
+                    if(first){
+                        tr = document.createElement('tr');
+                        tr.id = 'title';
+                        for(p in data[i]){
+                            td = document.createElement('th');
+                            text = document.createTextNode(p);
+                            td.append(text);
+                            tr.append(td);
+                        }
+                        td = document.createElement('th');
+                        text = document.createTextNode("button");
+                        td.append(text);
+                        tr.append(td);
+
+                        table.append(tr);
+                        first = false;
+                    }
+                    tr = document.createElement('tr');
+                    if(i%2==1){
+                                tr.id = 'eve';
+                    }
+                    for(p in data[i]){
+                        td = document.createElement('td');
+                        text = document.createTextNode(data[i][p]);
+                        td.append(text);
+                        tr.append(td);
+                    }
+                    td = document.createElement('td');
+                    let button = document.createElement('button');
+                    button.innerHTML = "Del";
+                    button.onclick = function(){
+                        this.parentNode.parentNode.remove();
+                    }
+                    td.append(button);
+                    tr.append(td);
+
+                    table.append(tr);
+                }
+                div.append(table);
+                document.querySelector('body').append(div);
+
+                tds = document.querySelectorAll('td');
+                
+                for(t of tds){
+                    t.onmouseover = function(){
+                        this.id = 'point';
+                    }
+                    t.onmouseout = function(){
+                        this.id = "";
+                    }
+                }
+            }
+        }
+        xhtp.open('get','mockaroo.json');
+        xhtp.responseType = 'json';
+        xhtp.send();
+    </script>
+</body>
+</html>
