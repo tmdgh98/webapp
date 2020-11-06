@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exam05.html</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(exam);
+
+        function exam() {
+            $('body').append('<div />').attr('id', 'show');
+            $.ajax({
+                url: 'members.json',
+                dataType: 'json',
+                success: makeTable
+            })
+        }
+
+        function makeTable(data) {
+            if(data.length>0)
+                title(data[0]);
+                
+            for (d of data) {
+                // console.log(d);
+                inner(d);
+                console.log(d);
+            }
+        }
+
+        function title(data) {
+            // console.log(data);
+            let ta, tr, th;
+            ta = $('<table />').attr('border', 1);
+            tr = $('<tr />');
+            for (d in data) {
+                th = $('<th />').html(d);
+                tr.append(th);
+            }
+            ta.append(tr);
+            $('#show').append(ta);
+        };
+
+        function inner(data) {
+            // console.log(data);
+            let tr, td;
+            tr = $('<tr />');
+            for (let d in data) {
+                td = $('<td />').html(data[d]);
+                tr.append(td);
+            }
+            $('table').append(tr);
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

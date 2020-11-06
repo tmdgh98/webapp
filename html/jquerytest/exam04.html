@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exam04.html</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        let saveDate = [];
+        let ele = ['name','age','phoneNumber'];
+        $(document).ready(exam);
+        function exam(){
+            $('body').append($('<div />').attr('id','show'));
+            let title = ["이름","나이","전화번호"];
+
+            for(let i = 0; i<title.length; i++){
+                let lavel = $('<lavel />').attr('for',ele[i]).html(title[i]+ " : ");
+                let input = $('<input />').attr('name',ele[i]);
+                $('#show').append(lavel,input,$('<br />'));
+            }
+            let save = $('<input />').attr('type','submit').attr('value','저장');
+            save.on('click',saveF)
+            $('#show').append(save);
+        }
+        function saveF(){
+            let input = $('input[name]');
+            let person ={};
+            for(let i = 0 ; i<input.length; i++){
+                person[ele[i]]=$(input[i]).val();
+            }
+            saveDate.push(person);
+            console.log(saveDate);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

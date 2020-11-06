@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exam06.html</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        
+        let persons = [];
+        $(document).ready(exam);
+
+        function exam() {
+            $('body').append('<div />').attr('id', 'show');
+            $.ajax({
+                url: 'employees.xml',
+                dataType: 'xml',
+                success: makeList
+            })
+        }
+
+        function makeList(data) {
+            $(data).find("record").each(function () {
+                let person = {};
+                person['사원번호'] = $(this).find("emp_id").text();
+                person['first_name'] = $(this).find("first_name").text();
+                person['연락처'] = $(this).find("phone_number").text();
+
+                persons.push(person);
+            })
+            console.log(persons);
+            
+            let div,ul,li;
+            div= $('<div />');
+            for(person of persons){
+                ul = $('<ul />');
+                for(p in person){
+                    li = $('<li />').html(p + " : " + person[p]);
+                    ul.append(li);
+                }
+                div.append(ul);
+            }
+            
+            $('body').append(div);
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
